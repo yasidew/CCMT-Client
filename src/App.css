@@ -57,4 +57,30 @@
   z-index: 1; /* Place the content on top of the image */
   padding: 20px;
 }
+.btncal{
+  background-color: #282c34;
+  color: white;
+  border: 2px solid #282c34;
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+}
+.btncal:hover {
+  background-color: white;
+  color: #282c34;
+}
+
+.btncomplexity{
+  background-color: #01266f;
+  color: white;
+  border: 2px solid #01266f;
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+}
+
 
