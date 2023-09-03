@@ -30,7 +30,13 @@ function ComplexityCalculator() {
         <div className='container'>
             <img src={img1} alt='complexity' width='100%' height='100%' className="background-image" />
             <div className='content'>
-                <h1 style={{ color: "white" }}>Code Complexity Calculator for Recursion</h1>
+            <div className='CCMTcontainer'>
+                <button className='btncal' onClick={() => window.location.href = '/TryCatchCalculator'}>Try Catch</button>
+                <button className='btncal' onClick={() => window.location.href = '/RecursionCalculator'}>Recursion</button>
+                <button className='btncal' onClick={() => window.location.href = '/ArrayDeclarationCalculator'}>Array Declaration</button>
+                <button className='btncal' onClick={() => window.location.href = '/CompundCondtionalCalculator'}>Compound Conditional Statements</button>
+            </div>
+                <h1 style={{ color: "white" }}>Code Complexity Calculator</h1>
                 <textarea
                     rows="10"
                     cols="50"
@@ -39,7 +45,7 @@ function ComplexityCalculator() {
                     placeholder="Enter your code here"
                 ></textarea>
                 <br></br>
-                <button onClick={handleCalculate} disabled={isLoading}>
+                <button className= 'btncomplexity'onClick={handleCalculate} disabled={isLoading}>
                     {isLoading ? 'Calculating...' : 'Calculate Complexity'}
                 </button>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
