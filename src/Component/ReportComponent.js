@@ -3,7 +3,7 @@ import React from 'react';
 function ReportComponent({ complexityData }) {
     const calculateComplexity = (data) => {
         // Calculate complexity using the provided formula
-        const complexity = data.reduce((total, line) => total + line.tokens, 0);
+        const complexity = data.reduce((sum, line) => sum + line.tokens, 0);
         return complexity;
     };
 
