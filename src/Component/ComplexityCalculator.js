@@ -34,7 +34,7 @@ function ComplexityCalculator() {
                 <button className='btncal' onClick={() => window.location.href = '/TryCatchCalculator'}>Try Catch</button>
                 <button className='btncal' onClick={() => window.location.href = '/RecursionCalculator'}>Recursion</button>
                 <button className='btncal' onClick={() => window.location.href = '/ArrayDeclarationCalculator'}>Array Declaration</button>
-                <button className='btncal' onClick={() => window.location.href = '/CompundCondtionalCalculator'}>Compound Conditional Statements</button>
+                <button className='btncal' onClick={() => window.location.href = '/CompoundConditionalCalculator'}>Compound Conditional Statements</button>
             </div>
                 <h1 style={{ color: "white" }}>Code Complexity Calculator</h1>
                 <textarea
