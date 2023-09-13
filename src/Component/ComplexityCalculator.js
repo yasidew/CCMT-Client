@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import img1 from "../img/blue.png";
 import ReportComponent from './ReportComponent';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function ComplexityCalculator() {
     const [code, setCode] = useState('');
@@ -26,6 +28,12 @@ function ComplexityCalculator() {
             });
     };
 
+    const handleClear = () => {
+        setCode(""); // Clear the textarea
+        setComplexity(null); // Clear the calculated complexity
+        setError(null); // Clear any error message
+      };
+
     return (
         <div className='container'>
             <img src={img1} alt='complexity' width='100%' height='100%' className="background-image" />
@@ -49,8 +57,16 @@ function ComplexityCalculator() {
                 <button className= 'btncomplexity'onClick={handleCalculate} disabled={isLoading}>
                     {isLoading ? 'Calculating...' : 'Calculate Complexity'}
                 </button>
+                <button className="btnclear" onClick={handleClear}>
+                    Clear
+                </button>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {complexity !== null && <p>Calculated Complexity: {complexity}</p>}
+                {code && (
+                    <SyntaxHighlighter language="java" style={vscDarkPlus}>
+                    {code}
+                    </SyntaxHighlighter>
+                )}
             </div>
         </div>
     );

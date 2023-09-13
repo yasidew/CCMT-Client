@@ -47,6 +47,8 @@ function CompoundConditionalCalculator() {
             });
     };
 
+    
+
     return (
         <div className='container'>
             <img src={img1} alt='complexity' width='100%' height='100%' className="background-image" />

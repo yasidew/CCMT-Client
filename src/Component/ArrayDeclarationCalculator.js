@@ -31,6 +31,12 @@ function ArrayDeclarationCalculator() {
       });
   };
 
+  const handleClear = () => {
+    setCode(""); // Clear the textarea
+    setComplexity(null); // Clear the calculated complexity
+    setError(null); // Clear any error message
+  };
+
   return (
     <div className="container">
       <img
@@ -65,6 +71,9 @@ function ArrayDeclarationCalculator() {
         >
           {isLoading ? "Calculating..." : "Calculate Complexity"}
         </button>
+        <button className="btnclear" onClick={handleClear}>
+            Clear
+          </button>
         {error && <p style={{ color: "red" }}>{error}</p>}
         {complexity !== null && <p>Calculated Complexity: {complexity}</p>}
         {code && (
