@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import img1 from '../img/blueimg.jpeg';
+import img1 from "../img/blue.png";
 import ReportComponent from './ReportComponent';
 
 function ComplexityCalculator() {
@@ -37,14 +37,15 @@ function ComplexityCalculator() {
                 <button className='btncal' onClick={() => window.location.href = '/CompoundConditionalCalculator'}>Compound Conditional Statements</button>
             </div>
                 <h1 style={{ color: "white" }}>Code Complexity Calculator</h1>
+                <br />
                 <textarea
-                    rows="10"
-                    cols="50"
+                    rows="15"
+                    cols="100"
                     value={code}
                     onChange={e => setCode(e.target.value)}
                     placeholder="Enter your code here"
                 ></textarea>
-                <br></br>
+                <br /><br />
                 <button className= 'btncomplexity'onClick={handleCalculate} disabled={isLoading}>
                     {isLoading ? 'Calculating...' : 'Calculate Complexity'}
                 </button>

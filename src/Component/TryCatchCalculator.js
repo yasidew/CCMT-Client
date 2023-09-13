@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import img1 from "../img/blueimg.jpeg";
+import img1 from "../img/blue.png";
 import ReportComponent from "./ReportComponent";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -49,10 +49,10 @@ function TryCatchCalculator() {
             Home
           </button>
         </div>
-        <h1 style={{ color: "white" }}>Code Complexity Calculator</h1>
+        <h1 style={{ color: "white" }}>Try Catch Complexity Calculator</h1>
         <textarea
-          rows="10"
-          cols="50"
+          rows="15"
+          cols="100"
           value={code}
           onChange={(e) => setCode(e.target.value)}
           placeholder="Enter your code here"

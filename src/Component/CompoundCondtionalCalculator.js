@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import img1 from '../img/blueimg.jpeg';
+import img1 from "../img/blue.png";
 
 function CompoundConditionalCalculator() {
     const [codeIF, setCodeIF] = useState('');
