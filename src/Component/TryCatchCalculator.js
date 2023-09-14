@@ -77,7 +77,12 @@ function TryCatchCalculator() {
         {error && <p style={{ color: "red" }}>{error}</p>}
         {complexity !== null && <p>Calculated Complexity: {complexity}</p>}
         {code && (
-          <SyntaxHighlighter language="java" style={vscDarkPlus}>
+          <SyntaxHighlighter
+            language="java"
+            style={vscDarkPlus}
+            showLineNumbers={true} // Add this line to enable line numbers
+            wrapLines={true}
+          >
             {code}
           </SyntaxHighlighter>
         )}
