@@ -65,6 +65,7 @@ function CompoundConditionalCalculator() {
                             value={codeIF}
                             onChange={e => setCodeIF(e.target.value)}
                             placeholder="Enter your codeIF here"
+                            style={{ overflow: "scroll" }} 
                         ></textarea>
                         <br></br>
                         <button className='btncomplexity' onClick={handleCalculateIF} disabled={isLoading}>
@@ -81,6 +82,7 @@ function CompoundConditionalCalculator() {
                             value={codeFor}
                             onChange={e => setCodeFor(e.target.value)}
                             placeholder="Enter your FOR code here"
+                            style={{ overflow: "scroll" }} 
                         ></textarea>
                         <br></br>
                         <button className='btncomplexity' onClick={handleCalculateFor} disabled={isLoadingFor}>

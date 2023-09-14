@@ -52,6 +52,7 @@ function ComplexityCalculator() {
                     value={code}
                     onChange={e => setCode(e.target.value)}
                     placeholder="Enter your code here"
+                    style={{ overflow: "scroll" }} 
                 ></textarea>
                 <br /><br />
                 <button className= 'btncomplexity'onClick={handleCalculate} disabled={isLoading}>
@@ -63,6 +64,7 @@ function ComplexityCalculator() {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {complexity !== null && <p>Calculated Complexity: {complexity}</p>}
                 {code && (
+                    <diV style = {{height: "220px", overflowY : "scroll"  }}>
                     <SyntaxHighlighter
                         language="java"
                         style={vscDarkPlus}
@@ -71,7 +73,8 @@ function ComplexityCalculator() {
                     >
                         {code}
                     </SyntaxHighlighter>
-                )}
+                    </diV>
+                    )}
             </div>
         </div>
     );

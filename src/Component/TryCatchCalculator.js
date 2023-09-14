@@ -62,6 +62,7 @@ function TryCatchCalculator() {
           value={code}
           onChange={(e) => setCode(e.target.value)}
           placeholder="Enter your code here"
+          style={{ overflow: "scroll" }} 
         ></textarea>
         <br />
         <button
@@ -77,6 +78,7 @@ function TryCatchCalculator() {
         {error && <p style={{ color: "red" }}>{error}</p>}
         {complexity !== null && <p>Calculated Complexity: {complexity}</p>}
         {code && (
+          <diV style = {{height: "220px", overflowY : "scroll"  }}>
           <SyntaxHighlighter
             language="java"
             style={vscDarkPlus}
@@ -85,6 +87,7 @@ function TryCatchCalculator() {
           >
             {code}
           </SyntaxHighlighter>
+          </diV>
         )}
       </div>
     </div>
