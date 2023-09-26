@@ -37,6 +37,14 @@ function RecursionCalculator() {
     setError(null); // Clear any error message
   };
 
+  const handleClearComments = () => {
+    // Create a regular expression to match comments (// and /* */)
+    const commentRegex = /\/\/[^\n]*|\/\*[\s\S]*?\*\/|#.*$/gm;
+    
+    // Remove comments from the code and set the textarea value
+     setCode(code.replace(commentRegex, ""));
+  };
+
   return (
     <div className="container">
       <img
@@ -53,6 +61,9 @@ function RecursionCalculator() {
             onClick={() => (window.location.href = "/")}
           >
             Home
+          </button>
+          <button className="btnclear" onClick={handleClearComments}>
+            Clear Comments
           </button>
         </div>
         <h1 style={{ color: "white" }}>Recursion Complexity Calculator</h1>
@@ -76,9 +87,9 @@ function RecursionCalculator() {
             Clear
           </button>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        {complexity !== null && <p>Calculated Complexity: {complexity}</p>}
+        {complexity !== null && <p  style={{color: " white"}}>Calculated Complexity: {complexity}</p>}
         {code && (
-          <diV style = {{height: "220px", overflowY : "scroll"  }}>
+          <diV style = {{height: "210px", overflowY : "scroll"  }}>
           <SyntaxHighlighter
             language="java"
             style={vscDarkPlus}

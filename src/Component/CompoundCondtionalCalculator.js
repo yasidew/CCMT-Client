@@ -46,6 +46,7 @@ function CompoundConditionalCalculator() {
                 setIsLoadingFor(false);
             });
     };
+    
 
     
 
@@ -89,7 +90,7 @@ function CompoundConditionalCalculator() {
                             {isLoadingFor ? 'Calculating FOR...' : 'Calculate Complexity FOR'}
                         </button>
                         {errorFor && <p style={{ color: 'red' }}>{errorFor}</p>}
-                        {complexityFor !== null && <p>Calculated FOR Complexity: {complexityFor}</p>}
+                        {complexityFor !== null && <p style={{color: " white"}}>Calculated FOR Complexity: {complexityFor}</p>}
                     </div>
                 </div>
             </div>
