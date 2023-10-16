@@ -15,6 +15,8 @@ function RecursionCalculator() {
     setIsLoading(true);
     setError(null);
 
+    console.log("Code sent to backend:", code); 
+
     axios
       .post("http://localhost:8080/calculate-complexity-recursion", { code })
       .then((response) => {
@@ -89,7 +91,7 @@ function RecursionCalculator() {
         {error && <p style={{ color: "red" }}>{error}</p>}
         {complexity !== null && <p  style={{color: " white"}}>Calculated Complexity: {complexity}</p>}
         {code && (
-          <diV style = {{height: "210px", overflowY : "scroll"  }}>
+          <div style = {{height: "210px", overflowY : "scroll"  }}>
           <SyntaxHighlighter
             language="java"
             style={vscDarkPlus}
@@ -98,7 +100,7 @@ function RecursionCalculator() {
           >
             {code}
           </SyntaxHighlighter>
-          </diV>
+          </div>
         )}
       </div>
     </div>
