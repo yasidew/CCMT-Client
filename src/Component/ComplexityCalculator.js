@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import img1 from "../img/blue.png";
-import ReportComponent from './ReportComponent';
+// import ReportComponent from './ReportComponent';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 

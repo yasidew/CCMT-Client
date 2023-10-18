@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import img1 from "../img/blue.png";
-import ReportComponent from "./ReportComponent";
+import RecursionReportComponent from "../Component/RecursionReport";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -12,10 +12,10 @@ function RecursionCalculator() {
   const [error, setError] = useState(null);
 
   const handleCalculate = () => {
+    // const sanitizedCode = code.replace(/\\/g, "\\\\");
+    console.log("Code sent to backend:", code);
     setIsLoading(true);
     setError(null);
-
-    console.log("Code sent to backend:", code); 
 
     axios
       .post("http://localhost:8080/calculate-complexity-recursion", { code })
@@ -42,9 +42,9 @@ function RecursionCalculator() {
   const handleClearComments = () => {
     // Create a regular expression to match comments (// and /* */)
     const commentRegex = /\/\/[^\n]*|\/\*[\s\S]*?\*\/|#.*$/gm;
-    
+
     // Remove comments from the code and set the textarea value
-     setCode(code.replace(commentRegex, ""));
+    setCode(code.replace(commentRegex, ""));
   };
 
   return (
@@ -53,7 +53,7 @@ function RecursionCalculator() {
         src={img1}
         alt="complexity"
         width="100%"
-        height="100%"
+        height="1100px"
         className="background-image"
       />
       <div className="content">
@@ -68,7 +68,7 @@ function RecursionCalculator() {
             Clear Comments
           </button>
         </div>
-        <h1 style={{ color: "white" }}>Recursion Complexity Calculator</h1>
+        <h1 style={{ color: "white" }}>Recursion Calculator</h1>
         <textarea
           rows="15"
           cols="100"
@@ -91,7 +91,7 @@ function RecursionCalculator() {
         {error && <p style={{ color: "red" }}>{error}</p>}
         {complexity !== null && <p  style={{color: " white"}}>Calculated Complexity: {complexity}</p>}
         {code && (
-          <div style = {{height: "210px", overflowY : "scroll"  }}>
+          <diV style = {{height: "210px", overflowY : "scroll"  }}>
           <SyntaxHighlighter
             language="java"
             style={vscDarkPlus}
@@ -100,11 +100,15 @@ function RecursionCalculator() {
           >
             {code}
           </SyntaxHighlighter>
-          </div>
+          </diV>
         )}
+      </div>
+      <div className="report">
+        <RecursionReportComponent complexity={complexity} />
       </div>
     </div>
   );
+
 }
 
 export default RecursionCalculator;

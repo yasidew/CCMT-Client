@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import img1 from "../img/blue.png";
-import ReportComponent from "./ReportComponent";
+// import ReportComponent from "./ReportComponent";
+import TryCatchReportComponent from "../Component/TryCatchReport";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -51,7 +52,7 @@ function TryCatchCalculator() {
         src={img1}
         alt="complexity"
         width="100%"
-        height="100%"
+        height="1100px"
         className="background-image"
       />
       <div className="content">
@@ -100,6 +101,9 @@ function TryCatchCalculator() {
           </SyntaxHighlighter>
           </diV>
         )}
+      </div>
+      <div className="report">
+        <TryCatchReportComponent complexity={complexity} />
       </div>
     </div>
   );
