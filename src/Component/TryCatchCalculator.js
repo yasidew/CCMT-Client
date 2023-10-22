@@ -46,6 +46,26 @@ function TryCatchCalculator() {
      setCode(code.replace(commentRegex, ""));
   };
 
+  const handleImport = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      const importedCode = e.target.result;
+      setCode(importedCode); // Set the imported code in the state
+      setComplexity(null); // Clear any previously calculated complexity
+      setError(null); // Clear any error message
+    };
+
+    if (file.name.endsWith(".java")) {
+      // If the file has a .java extension, read it as text
+      reader.readAsText(file);
+    } else {
+      // For other file types, read them as text as well
+      reader.readAsText(file);
+    }
+  };
+
   return (
     <div className="container">
       <img
@@ -66,6 +86,13 @@ function TryCatchCalculator() {
           <button className="btnclear" onClick={handleClearComments}>
             Clear Comments
           </button>
+          <input
+            type="file"
+            accept=".java, .txt"
+            onChange={handleImport}
+            className="file-input"
+          />
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
         <h1 style={{ color: "white" }}>Try Catch Complexity Calculator</h1>
         <textarea
